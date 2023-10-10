@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.JOptionPane;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -8,6 +10,7 @@ public class Main {
 		
 		System.out.println("LA RAMA DE SANTIAGO");
 		
+		JOptionPane.showMessageDialog(null, "probando rama");
 	}
 
 }
