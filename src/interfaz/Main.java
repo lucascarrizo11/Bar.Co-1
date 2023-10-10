@@ -8,7 +8,9 @@ public class Main {
 
 		System.out.println("Creacion del proyecto Bar.Co");
 		
-		System.out.println("LA RAMA DE SANTIAGO");
+		
+		System.out.println("2DA PRUEBA");
+	
 		
 		JOptionPane.showMessageDialog(null, "probando rama");
 	}
