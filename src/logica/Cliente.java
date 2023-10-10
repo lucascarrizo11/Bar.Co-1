@@ -43,12 +43,7 @@ public class Cliente extends Persona {
 		return "Cliente [idCliente=" + idCliente + ", clientes=" + clientes + "]";
 	} 
 
-	/*
-	public void agregar () {
-		Cliente cliente1 = new Cliente ("", "", "ivanivan", "123456789", "", 0);
-		clientes.add(cliente1);
-	}
-	*/
+	
 	
 	public boolean solicitarEnvio(LinkedList <Envio> envios ) {
 	    boolean ver = false;
