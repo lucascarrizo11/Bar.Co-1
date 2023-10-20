@@ -21,10 +21,14 @@ public interface InicioSesion {
 	
 	public default  boolean iniciarSesionClave(String clave, String claverepetida) {
 	
-		if (clave.isEmpty() || claverepetida.isEmpty() || clave != claverepetida  || clave.length() < 8 || claverepetida.length() <8) {
-			JOptionPane.showMessageDialog(null, "Error en la clave, vuelva a ingresarlo");
-
+		if (clave.isEmpty() || clave.length() < 8) {
+			if (claverepetida.isEmpty() || claverepetida.length() <8 || clave != claverepetida) {
+				
+				JOptionPane.showMessageDialog(null, "Error en la clave, vuelva a ingresarlo");
+			
+			}
 			return false;
+
 		}else {
 			
 			return true;
