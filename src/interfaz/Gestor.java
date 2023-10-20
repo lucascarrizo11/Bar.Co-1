@@ -60,24 +60,24 @@ public class Gestor implements InicioSesion {
 				JOptionPane.showMessageDialog(null, "Usuario repetido, ingrese otro nombre de usuario");
 			}else {
 				
-			
-
-		    if (nombrerepetido==false && valida.iniciarSesionNombre(nombre)==true && valida.validarMail(nombre)== true) {
-		    	
-		        clave = JOptionPane.showInputDialog("Ingrese su contraseña (tiene que tener 8 dígitos o más)");
-		        claveconfirmar = JOptionPane.showInputDialog("Repita su contraseña para confirmar");
-
-		        if (valida.iniciarSesionClave(clave, claveconfirmar)==true) {
-					
-		       
-		        Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
-		        
-		        cliente.getClientes().add(nuevoCliente);
-		        JOptionPane.showMessageDialog(null, "Registrado con éxito!");
-		        JOptionPane.showMessageDialog(null, cliente.getClientes());
-		        
-		        }
-		    }
+				
+	
+			    if (nombrerepetido==false && valida.iniciarSesionNombre(nombre)==true && valida.validarMail(nombre)== true) {
+			    	
+			        clave = JOptionPane.showInputDialog("Ingrese su contraseña (tiene que tener 8 dígitos o más)");
+			        claveconfirmar = JOptionPane.showInputDialog("Repita su contraseña para confirmar");
+	
+			        if (valida.iniciarSesionClave(clave, claveconfirmar)==true) {
+						
+			       
+			        Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
+			        
+			        cliente.getClientes().add(nuevoCliente);
+			        JOptionPane.showMessageDialog(null, "Registrado con éxito!");
+			        JOptionPane.showMessageDialog(null, cliente.getClientes());
+			        
+			        }
+			    }
 		    
 			}
 		        }while (valida.iniciarSesionNombre(nombre)==false && valida.validarMail(nombre)==false && valida.iniciarSesionClave(clave, claveconfirmar)==false);
@@ -91,10 +91,17 @@ public class Gestor implements InicioSesion {
 			
 		
 		}else if (opciones2==1) {
+			
 			nombre=JOptionPane.showInputDialog("ingrese su nombre de usuario");
 			clave=JOptionPane.showInputDialog("ingrese su clave");
 			
+			if (valida.iniciarSesionNombre(nombre)==false) {
+				
 			
+			}
+			if (valida.iniciarSesionClave(clave, claveconfirmar)==false) {
+
+			}
 			
 			
 			for (int i = 0; i < cliente.getClientes().size(); i++) {
