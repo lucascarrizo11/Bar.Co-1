@@ -8,14 +8,10 @@ public class Producto {
 	private boolean fragil;
 	
 	
-	public Producto(int idProducto, String nombre, Double peso, String tamaño, boolean fragil) {
-		super();
-		this.idProducto = idProducto;
-		this.nombre = nombre;
-		this.peso = peso;
-		this.tamaño = tamaño;
-		this.fragil = fragil;
+	public Producto() {
+
 	}
+
 
 
 	@Override
