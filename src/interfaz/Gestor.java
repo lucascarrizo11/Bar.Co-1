@@ -69,6 +69,7 @@ public class Gestor implements InicioSesion {
 	
 			        if (valida.iniciarSesionClave(clave, claveconfirmar)==true) {
 						
+			       System.out.println();
 			       
 			        Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
 			        
