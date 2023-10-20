@@ -68,15 +68,19 @@ public class Gestor implements InicioSesion {
 			        claveconfirmar = JOptionPane.showInputDialog("Repita su contraseña para confirmar");
 	
 			        if (valida.iniciarSesionClave(clave, claveconfirmar)==true) {
-						
-			       System.out.println();
-			       
-			        Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
-			        
-			        cliente.getClientes().add(nuevoCliente);
-			        JOptionPane.showMessageDialog(null, "Registrado con éxito!");
-			        JOptionPane.showMessageDialog(null, cliente.getClientes());
-			        
+					
+			        	if (clave==claveconfirmar) {
+							
+							Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
+							
+							cliente.getClientes().add(nuevoCliente);
+							JOptionPane.showMessageDialog(null, "Registrado con éxito!");
+							JOptionPane.showMessageDialog(null, cliente.getClientes());
+							
+						}else {
+								JOptionPane.showMessageDialog(null, "Error en la constraseña");
+						}
+			        	
 			        }
 			    }
 		    
