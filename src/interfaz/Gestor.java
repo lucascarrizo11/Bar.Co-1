@@ -1,17 +1,22 @@
 package interfaz;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 import javax.swing.JOptionPane;
 
+import datos.Conexion;
 import logica.Capitan;
 import logica.Cliente;
 import logica.Encargado;
 import logica.InicioSesion;
+import validacion.Validar;
 
 public class Gestor implements InicioSesion {
 
 	public static void main(String[] args) {
 		Gestor valida = new Gestor();
-
+		Validar va = new Validar ();
 		Cliente cliente = new Cliente("", "", "", "", "", 0);
 		PantallaCliente pc = new PantallaCliente ();
 		Encargado encargado = new Encargado ("", "", "", "", "", 0);
@@ -22,14 +27,17 @@ public class Gestor implements InicioSesion {
 		Cliente cliente1 = new Cliente ("", "", "ivanivan", "123456789", "", 0);
 		cliente.getClientes().add(cliente1);
 		
-		
 		Encargado encargado1 = new Encargado("Horacio", "Perez", "juanperez", "123456789", "Encargado", 1);
 		encargado.getEncargados().add(encargado1);
 		
 		Capitan capitan1 = new Capitan ("", "", "hola", "123456789", "", 0);
 		capitan.getCapitanes().add(capitan1);
 		
-		
+		/*
+		Conexion conexion = new Conexion ();
+		Connection con = conexion.conectar(); 
+		PreparedStatement stmt;
+		*/
 		String clave = "";
 		String claveconfirmar="";
 		String nombre="";
@@ -69,17 +77,17 @@ public class Gestor implements InicioSesion {
 	
 			        if (valida.iniciarSesionClave(clave, claveconfirmar)==true) {
 					
-			        	if (clave==claveconfirmar) {
-							
+			        	//if (clave==claveconfirmar ) {
+			        		va.validarIngreso(cliente, encargado, capitan);
 							Cliente nuevoCliente = new Cliente("", "", nombre, clave, "", 0);
 							
 							cliente.getClientes().add(nuevoCliente);
 							JOptionPane.showMessageDialog(null, "Registrado con éxito!");
 							JOptionPane.showMessageDialog(null, cliente.getClientes());
 							
-						}else {
-								JOptionPane.showMessageDialog(null, "Error en la constraseña");
-						}
+					//	}else {
+								//JOptionPane.showMessageDialog(null, "Error en la constraseña");
+						//}
 			        	
 			        }
 			    }

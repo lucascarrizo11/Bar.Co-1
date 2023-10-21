@@ -1,5 +1,6 @@
 package interfaz;
-
+import datos.Conexion;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 import logica.Cliente;
@@ -15,6 +16,9 @@ public class Main {
 		pantalla.MenuCliente(cliente);
 		System.out.println("Creacion del proyecto Bar.Co");
 		
+		//probando si la coneccion a la base de datos funciona
+		Conexion conexion = new Conexion ();
+		Connection con = conexion.conectar(); 
 		
 		System.out.println("2DA PRUEBA");
 	
