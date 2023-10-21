@@ -1,10 +1,13 @@
 package logica;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
 import javax.swing.JOptionPane;
 
+import datos.Conexion;
 import interfaz.PantallaCliente;
 
 public class Cliente extends Persona {
@@ -43,7 +46,33 @@ public class Cliente extends Persona {
 		return "Cliente [idCliente=" + idCliente + ", clientes=" + clientes + "]";
 	} 
 
+	Conexion conexion = new Conexion ();
+	Connection con = conexion.conectar(); 
+	PreparedStatement stmt;
 	
+	public boolean guardar () {
+		
+		String sql = "INSERT INTO `cliente`(`id_cliente`, `nombre`, `apellido`, `usuario`, `clave`, `id_envio`)  VALUES (?,?,?,?,?,?)";
+		
+		try {
+			
+			stmt = con.prepareStatement(sql);
+			stmt.setLong(1, this.getIdCliente());
+			stmt.setString(2, this.getNombre());
+			stmt.setString(3, this.getApellido());
+			stmt.setString(4, this.getMail());
+			stmt.setString(5, this.getClave());
+			stmt.setInt(6, 1);
+			
+			stmt.executeUpdate();
+			return true;
+			
+		} catch (Exception e) {
+			return false;
+		}
+		
+		
+	}
 	
 	public boolean solicitarEnvio(LinkedList <Envio> envios ) {
 	    boolean ver = false;
