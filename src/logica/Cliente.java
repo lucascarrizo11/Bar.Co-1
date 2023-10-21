@@ -74,7 +74,14 @@ public class Cliente extends Persona {
 		
 	}
 	
-	public boolean solicitarEnvio(LinkedList <Envio> envios ) {
+
+	Conexion conexion = new Conexion(); 
+	
+	Connection con = conexion.conectar();
+	
+	PreparedStatement stmt;
+	
+	public boolean solicitarEnvio(LinkedList <Envio> envios , Producto producto) {
 	    boolean ver = false;
 	    boolean fragil;
 	    String nombre="";
@@ -89,6 +96,7 @@ public class Cliente extends Persona {
 	            } else {
 	                JOptionPane.showMessageDialog(null, "Nombre ingresado correctamente");
 	                ver = true;
+	                producto.setNombre(nombre);
 	            }
 	        } catch (NullPointerException e) {
 	            JOptionPane.showMessageDialog(null, "Error: No se proporcionó un nombre.");
@@ -105,6 +113,7 @@ public class Cliente extends Persona {
 	            } else {
 	                JOptionPane.showMessageDialog(null, "Peso ingresado correctamente");
 	                ver = true; 
+	                producto.setPeso(peso);
 	            }
 	        } catch (NumberFormatException e) {
 	            JOptionPane.showMessageDialog(null, "Error: Ingresa un valor numérico válido para el peso.");
@@ -117,6 +126,7 @@ public class Cliente extends Persona {
 	            JOptionPane.showMessageDialog(null, "Tamaño no ingresada correctamente");
 	        } else {
 	            JOptionPane.showMessageDialog(null, "Tamaño ingresada correctamente");
+	            producto.setTamaño(tamaño);
 	            ver = true; 
 	        }
 	    } while (!ver); 
@@ -129,18 +139,34 @@ public class Cliente extends Persona {
 	    fragil = (seleccion == JOptionPane.YES_OPTION);
 
 	   
-	    
-	    
-	    Producto producto=new Producto(1, nombre, peso, tamaño, fragil);
+	    String sql = "INSERT INTO `historial`(`nombre`, `peso`, `tamanio`) VALUES (?,?,?)";
+
+		
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, producto.getNombre());
+			stmt.setDouble(2, producto.getPeso());
+			stmt.setString(3, producto.getTamaño());
+			System.out.println(sql);
+			System.out.println(stmt);
+			stmt.execute();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
+	
+	
+	 /*   Producto producto=new Producto(1, nombre, peso, tamaño, fragil);
 	    LocalDate fechaActual = LocalDate.now();
 	    Envio envioos= new Envio(1, fechaActual, producto);
 	    
-	    envios.add(envioos);
+	    envios.add(envioos);*/
 	
 	    
 	    
 	    
-	    return true;
+	   
 	}
 
 	
