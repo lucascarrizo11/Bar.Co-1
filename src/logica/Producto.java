@@ -5,15 +5,15 @@ public class Producto {
 	private String nombre;
 	private int peso;
 	private String tamaño;
-	private String fragil;
+	private boolean fragil;
 
-	public Producto(int idProducto, String nombre, int peso, String tamaño, String fragil) {
+	public Producto(String nombre, int peso, String tamaño, boolean fragil2) {
 		super();
 		this.idProducto = idProducto;
 		this.nombre = nombre;
 		this.peso = peso;
 		this.tamaño = tamaño;
-		this.fragil = fragil;
+		this.fragil = fragil2;
 	}
 
 	@Override
@@ -54,11 +54,11 @@ public class Producto {
 		this.tamaño = tamaño;
 	}
 
-	public String getFragil() {
+	public boolean getFragil() {
 		return fragil;
 	}
 
-	public void setFragil(String fragil) {
+	public void setFragil(boolean fragil) {
 		this.fragil = fragil;
 	}
 }

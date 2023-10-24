@@ -52,5 +52,17 @@ public class Encargado extends Persona {
 	public double calcularRutaMaritima(Barco barco) {
 		return 0;
 	}
+	
+	
+	public void asignarProducto(){
+		//lista de productos del cliente -> seleccionas lista contenedores y el producto
+		
+	}
+	
+	public void asignarContendor() {
+		//lista de barcos -> seleccionas de la lista de contenedores
+	}
+	
+	
 
 }

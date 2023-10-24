@@ -26,7 +26,7 @@ public class Gestor implements InicioSesion {
 		//Capitan capitan = new Capitan("", "", "", "", "", 0);
 		PantallaCapitan pca = new PantallaCapitan();
 		HistorialEnvio hist = new HistorialEnvio(0, null);
-		Producto prod = new Producto(0, null, 0, null, null);
+		//Producto prod = new Producto(0, null, 0, null, null);
 
 		/*
 		 * Conexion conexion = new Conexion (); Connection con = conexion.conectar();
@@ -108,7 +108,7 @@ public class Gestor implements InicioSesion {
 				for (int i = 0; i < cliente.getClientes().size(); i++) {
 					if (nombre.equalsIgnoreCase(cliente.getClientes().get(i).getMail())
 							&& clave.equalsIgnoreCase(cliente.getClientes().get(i).getClave())) {
-						pc.MenuCliente(cliente, hist, prod);
+						pc.MenuCliente(cliente, hist);
 
 					}
 
