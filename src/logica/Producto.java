@@ -3,16 +3,18 @@ package logica;
 public class Producto {
 	private int idProducto;
 	private String nombre;
-	private Double peso;
+	private int peso;
 	private String tamaño;
-	private boolean fragil;
-	
-	
-	public Producto() {
+	private String fragil;
 
+	public Producto(int idProducto, String nombre, int peso, String tamaño, String fragil) {
+		super();
+		this.idProducto = idProducto;
+		this.nombre = nombre;
+		this.peso = peso;
+		this.tamaño = tamaño;
+		this.fragil = fragil;
 	}
-
-
 
 	@Override
 	public String toString() {
@@ -20,36 +22,43 @@ public class Producto {
 				+ ", fragil=" + fragil + "]";
 	}
 
-
 	public int getIdProducto() {
 		return idProducto;
 	}
+
 	public void setIdProducto(int idProducto) {
 		this.idProducto = idProducto;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Double getPeso() {
+
+	public int getPeso() {
 		return peso;
 	}
-	public void setPeso(Double peso) {
+
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
+
 	public String getTamaño() {
 		return tamaño;
 	}
+
 	public void setTamaño(String tamaño) {
 		this.tamaño = tamaño;
 	}
-	public boolean isFragil() {
+
+	public String getFragil() {
 		return fragil;
 	}
-	public void setFragil(boolean fragil) {
+
+	public void setFragil(String fragil) {
 		this.fragil = fragil;
 	}
 }
-

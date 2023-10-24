@@ -11,9 +11,9 @@ public class Main {
 	public static void main(String[] args) {
 
 		PantallaCliente pantalla = new PantallaCliente();
-		Cliente cliente = new Cliente ("","","","","",1);
+		//Cliente cliente = new Cliente ("","","","","",1);
 		
-		pantalla.MenuCliente(cliente);
+		//pantalla.MenuCliente(cliente);
 		System.out.println("Creacion del proyecto Bar.Co");
 		
 		//probando si la coneccion a la base de datos funciona
