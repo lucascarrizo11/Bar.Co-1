@@ -16,7 +16,7 @@ public class Main {
 		System.out.println("2DA PRUEBA");
 	
 		System.err.println("probandoooofdsa");
-		
+		System.out.println();
 		
 		JOptionPane.showMessageDialog(null, "probando rama");
 	}
