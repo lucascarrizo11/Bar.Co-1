@@ -5,16 +5,19 @@ public class Producto {
 	private String nombre;
 	private int peso;
 	private String tamaño;
-	private boolean fragil;
-
-	public Producto(String nombre, int peso, String tamaño, boolean fragil2) {
+	private String fragil;
+	
+	
+	public Producto(String nombre, String fragil,int peso) {
 		super();
 		this.idProducto = idProducto;
 		this.nombre = nombre;
+		this.fragil = fragil;
 		this.peso = peso;
 		this.tamaño = tamaño;
-		this.fragil = fragil2;
+	
 	}
+
 
 	@Override
 	public String toString() {
@@ -22,43 +25,36 @@ public class Producto {
 				+ ", fragil=" + fragil + "]";
 	}
 
+
 	public int getIdProducto() {
 		return idProducto;
 	}
-
 	public void setIdProducto(int idProducto) {
 		this.idProducto = idProducto;
 	}
-
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public int getPeso() {
 		return peso;
 	}
-
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-
 	public String getTamaño() {
 		return tamaño;
 	}
-
 	public void setTamaño(String tamaño) {
 		this.tamaño = tamaño;
 	}
-
-	public boolean getFragil() {
+	public String getFragil() {
 		return fragil;
 	}
-
-	public void setFragil(boolean fragil) {
+	public void setFragil(String fragil) {
 		this.fragil = fragil;
 	}
 }
+

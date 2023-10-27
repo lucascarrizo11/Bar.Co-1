@@ -6,7 +6,7 @@ public class Capitan extends Persona {
 	private int idCapitan;
 	private LinkedList <Capitan> capitanes = new LinkedList <>();
 	
-	public Capitan(int idCapitan, String nombre, String apellido, String mail, String clave) {
+	public Capitan(String nombre, String apellido, String mail, String clave, String rol, int idCapitan) {
 		super(nombre, apellido, mail, clave);
 		this.idCapitan = idCapitan;
 		this.capitanes = capitanes;
