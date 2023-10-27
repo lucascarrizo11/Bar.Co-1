@@ -164,5 +164,31 @@ public class Cliente extends Persona {
 	}
 
 	
+	public void elegirFecha(Envio envio) {
+		LocalDate fecha_envio = LocalDate.now();
+	       
+        Date fechaformatodate = Date.from(
+                fecha_envio.atStartOfDay(
+                        ZoneId.systemDefault())
+                .toInstant());
+       envio.setFecha_envio((java.sql.Date) fechaformatodate);
+       
+       String fecha_entrega=JOptionPane.showInputDialog("ingresar fecha");
+       DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
+
+       
+       
+		    String sql ="INSERT INTO  'envio'('fecha_envio','fecha_entrega')VALUE (?,?)";
+		
+		    try {
+		    	stmt = con.prepareStatement(sql);
+		    	stmt.setDate(1,envio.getFecha_envio());
+		    	stmt.setDate(2,envio.getFecha_entrega());
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+	}
+
+	
 	
 }
