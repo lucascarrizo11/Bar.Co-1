@@ -1,4 +1,4 @@
-package logica;
+package logica.copy;
 
 import java.util.LinkedList;
 
@@ -7,7 +7,7 @@ public class Capitan extends Persona {
 	private LinkedList <Capitan> capitanes = new LinkedList <>();
 	
 	public Capitan(String nombre, String apellido, String mail, String clave, String rol, int idCapitan) {
-		super(nombre, apellido, mail, clave);
+		super(nombre, apellido, mail, clave, rol);
 		this.idCapitan = idCapitan;
 		this.capitanes = capitanes;
 	}

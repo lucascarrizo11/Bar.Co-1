@@ -1,21 +1,20 @@
-package logica;
+package logica.copy;
 
 public class Producto {
 	private int idProducto;
 	private String nombre;
-	private int peso;
+	private Double peso;
 	private String tamaño;
-	private String fragil;
+	private boolean fragil;
 	
 	
-	public Producto(String nombre, String fragil,int peso) {
+	public Producto(int idProducto, String nombre, Double peso, String tamaño, boolean fragil) {
 		super();
 		this.idProducto = idProducto;
 		this.nombre = nombre;
-		this.fragil = fragil;
 		this.peso = peso;
 		this.tamaño = tamaño;
-	
+		this.fragil = fragil;
 	}
 
 
@@ -38,10 +37,10 @@ public class Producto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
-	public void setPeso(int peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 	public String getTamaño() {
@@ -50,10 +49,10 @@ public class Producto {
 	public void setTamaño(String tamaño) {
 		this.tamaño = tamaño;
 	}
-	public String getFragil() {
+	public boolean isFragil() {
 		return fragil;
 	}
-	public void setFragil(String fragil) {
+	public void setFragil(boolean fragil) {
 		this.fragil = fragil;
 	}
 }
